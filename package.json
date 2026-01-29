@@ -5,6 +5,22 @@
     "scripts": {},
     "author": "Troll321",
     "license": "ISC",
+    "homepage": "https://github.com/Troll321/next-competition-backend",
+    "repository": {
+        "url": "https://github.com/Troll321/next-competition-backend"
+    },
+    "keywords": [
+        "typescript",
+        "javascript",
+        "competition",
+        "backend",
+        "nextjs",
+        "next",
+        "template",
+        "event",
+        "events",
+        "website"
+    ],
     "bin": {
         "next-competition-backend": "setup.js"
     },
