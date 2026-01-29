@@ -1,0 +1,17 @@
+{
+    "name": "next-competition-backend",
+    "version": "1.0.0",
+    "description": "Setup basic BE for Next JS based competition website",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Troll321",
+    "license": "ISC",
+    "bin": {
+        "next-competition-backend": "setup.js"
+    },
+    "dependencies": {
+        "@inquirer/prompts": "^8.2.0"
+    }
+}
