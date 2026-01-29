@@ -3,6 +3,7 @@
 const { execSync } = require("child_process");
 const { input, select } = require("@inquirer/prompts");
 const path = require("path");
+const fs = require("fs");
 const TEMPLATE_REPO_URL = "https://github.com/Troll321/next-competition-backend-template";
 
 const execCommand = (command, options = {}) => {
@@ -15,7 +16,7 @@ const execCommand = (command, options = {}) => {
 };
 
 const setupRepository = async (projectName, packageManager) => {
-    execCommand(`git clone --depth=1 ${TEMPLATE_REPO_URL} ${projectName}`);
+    execCommand(`git clone --depth 1 "${TEMPLATE_REPO_URL}" "${projectName}"`);
 
     const projectPath = path.join(process.cwd(), projectName);
     let installCommand;
@@ -46,7 +47,7 @@ const setupRepository = async (projectName, packageManager) => {
 };
 
 const main = async () => {
-    const projectName = await input({ message: "Project name: " });
+    const projectName = await input({ message: "Project name: ", pattern: /^[^\"]+$/ });
     const packageManager = await select({
         message: "Package manager?: ",
         choices: [
@@ -62,5 +63,5 @@ const main = async () => {
 };
 
 main().catch((err) => {
-    console.error(err.name ?? err);
+    console.error(err);
 });
